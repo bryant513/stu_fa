@@ -1,0 +1,14 @@
+development:
+  domain:		stu_fa.com
+  root_path: 	/opt/apps/stu_fa
+  host: 		http://localhost:3000
+
+test:
+  domain:		stu_fa.com
+  root_path: 	/opt/apps/stu_fa
+  host: 		http://localhost:3000
+
+production:
+  domain:		stu_fa.com
+  root_path: 	/opt/apps/stu_fa
+  host: 		http://stu_fa.com
