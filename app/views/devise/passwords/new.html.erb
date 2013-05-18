@@ -1,0 +1,23 @@
+<%= content_for :css do %>
+    <%= stylesheet_link_tag "bootstrap.min", "bootstrap-responsive.min", "bootstrap-devise" %>
+<% end %>
+<div class="container">
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name),
+               :html => {:class => 'form-forgot', :method => :post}) do |f| %>
+      <h2 class="form-signin-heading">Forgot your password?</h2>
+      <% unless devise_error_messages!.blank? %>
+          <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>ERROR: </strong>
+            <%= simple_format resource.errors.full_messages.map { |msg| content_tag(:p, msg) }.join %>
+          </div>
+      <% end %>
+      <%= f.email_field :email, :autofocus => true, :class => 'input-block-level', :placeholder => 'Email' %>
+      <%= f.submit "Send me reset password instructions", :class => 'btn btn-large btn-primary' %>
+      <%= render "devise/shared/links" %>
+  <% end %>
+
+</div>
+<%= content_for :js do %>
+    <%= javascript_include_tag "bootstrap.min" %>
+<% end %>

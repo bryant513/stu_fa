@@ -1,0 +1,17 @@
+<div class="container">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-signin'}) do |f| %>
+      <h2 class="form-signin-heading">Sign up</h2>
+      <% unless devise_error_messages!.blank? %>
+          <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>ERROR: </strong>
+            <%= simple_format resource.errors.full_messages.map { |msg| content_tag(:p, msg) }.join %>
+          </div>
+      <% end %>
+      <%= f.email_field :email, :autofocus => true, :class => 'input-block-level', :placeholder => 'Email' %>
+      <%= f.password_field :password, :class => 'input-block-level', :placeholder => 'Password' %>
+      <%= f.password_field :password_confirmation, :class => 'input-block-level', :placeholder => 'Password confirmation' %>
+      <%= f.submit "Sign up", :class => 'btn btn-large btn-primary' %>
+      <%= render "devise/shared/links" %>
+  <% end %>
+</div>

@@ -44,6 +44,16 @@ StuFa::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.163.com",
+      :port => 25,
+      :domain => "smtp.163.com",
+      :authentication => :login,
+      :user_name => "rubyonrails",
+      :password => "zhppp0756"
+  }
+  config.action_mailer.default_url_options = { :host => 'http://localhost:3000' }
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )

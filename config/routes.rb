@@ -1,4 +1,8 @@
 StuFa::Application.routes.draw do
+  devise_for :admin_users
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
